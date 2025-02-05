@@ -1,4 +1,4 @@
-mport axios from "axios";
+import axios from "axios";
 
 export async function getArticleList(page = 1, pageSize = 10, keyword = "") {
 	  const url = `https://panda-market-api-crud.vercel.app/articles?page=${page}&pageSize=${pageSize}&keyword=${keyword}`;
