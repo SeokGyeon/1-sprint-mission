@@ -1,4 +1,4 @@
-mport { getProductList } from "./productService.js";
+import { getProductList } from "./productService.js";
 import { getArticleList } from "./articleService.js";
 import { Product, ElectronicProduct } from "./product.js";
 import { Article } from "./article.js";
