@@ -4,7 +4,6 @@ import { validateProduct } from "../middlewares/validation.js";
 
 const router = express.Router();
 
-// 상품 등록
 router.post(
   "/",
   validateProduct,
@@ -13,7 +12,6 @@ router.post(
   })
 );
 
-// 상품 목록 조회 (페이지네이션 & 검색 기능)
 router.get(
   "/",
   asyncHandler(async (req, res) => {
@@ -21,7 +19,6 @@ router.get(
   })
 );
 
-// 상품 상세 조회
 router.get(
   "/:id",
   asyncHandler(async (req, res) => {
@@ -31,7 +28,6 @@ router.get(
   })
 );
 
-// 상품 수정
 router.patch(
   "/:id",
   asyncHandler(async (req, res) => {
@@ -39,7 +35,6 @@ router.patch(
   })
 );
 
-// 상품 삭제
 router.delete(
   "/:id",
   asyncHandler(async (req, res) => {

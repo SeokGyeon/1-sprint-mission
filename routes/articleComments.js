@@ -4,7 +4,6 @@ import { validateComment } from "../middlewares/validation.js";
 
 const router = express.Router();
 
-// 자유게시판 댓글 등록
 router.post(
   "/:articleId",
   validateComment,
@@ -13,7 +12,6 @@ router.post(
   })
 );
 
-// 자유게시판 댓글 조회 (커서 기반 페이지네이션)
 router.get(
   "/:articleId",
   asyncHandler(async (req, res) => {

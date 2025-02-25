@@ -3,7 +3,6 @@ import multer from "multer";
 
 const router = express.Router();
 
-// 이미지 업로드 설정
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     cb(null, "uploads/");
@@ -15,18 +14,15 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage });
 
-// 이미지 업로드 API
 router.post("/", upload.single("image"), (req, res) => {
   try {
     if (!req.file) {
       return res.status(400).json({ error: "No file uploaded" });
     }
-    res
-      .status(201)
-      .json({
-        message: "Image uploaded successfully",
-        imagePath: `/uploads/${req.file.filename}`,
-      });
+    res.status(201).json({
+      message: "Image uploaded successfully",
+      imagePath: `/uploads/${req.file.filename}`,
+    });
   } catch (err) {
     res.status(500).json({ error: err.message });
   }

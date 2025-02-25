@@ -4,7 +4,6 @@ import { validateComment } from "../middlewares/validation.js";
 
 const router = express.Router();
 
-// 중고마켓 댓글 등록
 router.post(
   "/:productId",
   validateComment,
@@ -13,7 +12,6 @@ router.post(
   })
 );
 
-// 중고마켓 댓글 조회 (커서 기반 페이지네이션)
 router.get(
   "/:productId",
   asyncHandler(async (req, res) => {

@@ -19,7 +19,6 @@ app.use("/product-comments", productCommentRoutes);
 app.use("/article-comments", articleCommentRoutes);
 app.use("/upload", uploadRoutes);
 
-// 라우트 중복 제거
 app
   .route("/users")
   .get((req, res) => {
@@ -29,7 +28,6 @@ app
     res.status(201).json({ message: "User created (DB integration needed)" });
   });
 
-// 에러 핸들러 미들웨어 적용
 app.use(asyncHandler);
 
 const allowedOrigin = process.env.ALLOWED_ORIGIN || "*";
@@ -42,7 +40,6 @@ app.use(
   })
 );
 
-// 서버 실행
 app.listen(3000, () => {
   console.log("Server is running on port 3000");
 });
