@@ -1,9 +1,9 @@
 import express from "express";
 import cors from "cors";
-import productRoutes from "./src/routes/products.js";
-import articleRoutes from "./src/routes/articles.js";
-import productCommentRoutes from "./src/routes/productComments.js";
-import articleCommentRoutes from "./src/routes/articleComments.js";
+import productRoutes from "./routes/products.js";
+import articleRoutes from "./routes/articles.js";
+import productCommentRoutes from "./routes/productComments.js";
+import articleCommentRoutes from "./routes/articleComments.js";
 
 const app = express();
 
