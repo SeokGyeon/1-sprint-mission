@@ -1,4 +1,4 @@
-### 🔐 회원가입
+### 회원가입
 POST http://localhost:5000/auth/signup
 Content-Type: application/json
 
@@ -8,7 +8,7 @@ Content-Type: application/json
   "password": "password123"
 }
 
-### 🔐 로그인 (→ Access Token 받기)
+### 로그인
 POST http://localhost:5000/auth/login
 Content-Type: application/json
 
@@ -17,11 +17,11 @@ Content-Type: application/json
   "password": "newPassword123"
 }
 
-### 👤 내 정보 조회
+### 내 정보 조회
 GET http://localhost:5000/users/me
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiOiJ0ZXN0QGV4YW1wbGUuY29tIiwiaWF0IjoxNzQzMjQ1NDQ3LCJleHAiOjE3NDM4NTAyNDd9.anqV0VSBu2VFY10f2V3_8L_ZDtnkGVtgg-1ra5I6XMM
 
-### 👤 내 정보 수정
+### 내 정보 수정
 PATCH http://localhost:5000/users/me
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiOiJ0ZXN0QGV4YW1wbGUuY29tIiwiaWF0IjoxNzQzMjQ1NDQ3LCJleHAiOjE3NDM4NTAyNDd9.anqV0VSBu2VFY10f2V3_8L_ZDtnkGVtgg-1ra5I6XMM
@@ -31,7 +31,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiO
   "image": "https://example.com/avatar.jpg"
 }
 
-### 🔑 비밀번호 변경
+### 비밀번호 변경
 PATCH http://localhost:5000/users/password
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiOiJ0ZXN0QGV4YW1wbGUuY29tIiwiaWF0IjoxNzQzMjQ1NDQ3LCJleHAiOjE3NDM4NTAyNDd9.anqV0VSBu2VFY10f2V3_8L_ZDtnkGVtgg-1ra5I6XMM
@@ -41,13 +41,13 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiO
   "newPassword": "newPassword123"
 }
 
-### 📦 내가 등록한 상품 조회
+### 내가 등록한 상품 조회
 GET http://localhost:5000/users/my-products
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiOiJ0ZXN0QGV4YW1wbGUuY29tIiwiaWF0IjoxNzQzMjQ1NDQ3LCJleHAiOjE3NDM4NTAyNDd9.anqV0VSBu2VFY10f2V3_8L_ZDtnkGVtgg-1ra5I6XMM
 
 ---
 
-### 📦 상품 등록
+### 상품 등록
 POST http://localhost:5000/products
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiOiJ0ZXN0QGV4YW1wbGUuY29tIiwiaWF0IjoxNzQzMjQ1NDQ3LCJleHAiOjE3NDM4NTAyNDd9.anqV0VSBu2VFY10f2V3_8L_ZDtnkGVtgg-1ra5I6XMM
@@ -60,13 +60,13 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiO
   "images": []
 }
 
-### 📦 전체 상품 조회
+### 전체 상품 조회
 GET http://localhost:5000/products
 
-### 📦 상품 상세 조회
+### 상품 상세 조회
 GET http://localhost:5000/products/1
 
-### ✏️ 상품 수정
+### 상품 수정
 PATCH http://localhost:5000/products/1
 Content-Type: application/json
 Authorization: Bearer your_access_token_here
@@ -75,13 +75,13 @@ Authorization: Bearer your_access_token_here
   "price": 40000
 }
 
-### ❌ 상품 삭제
+### 상품 삭제
 DELETE http://localhost:5000/products/1
 Authorization: Bearer your_access_token_here
 
 ---
 
-### 📝 게시글 등록
+### 게시글 등록
 POST http://localhost:5000/articles
 Content-Type: application/json
 Authorization: Bearer your_access_token_here
@@ -91,5 +91,3 @@ Authorization: Bearer your_access_token_here
   "content": "자유롭게 작성해보세요",
   "tags": ["일상"]
 }
-
-### 📄
