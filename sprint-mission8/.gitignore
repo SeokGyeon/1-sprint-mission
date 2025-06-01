@@ -2,7 +2,7 @@
 .vscode/
 node_modules/
 .env
-.env.test
+src/.env.test
 !.env.example
 build/
 tests
