@@ -1,0 +1,21 @@
+name: Deploy to AWS
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Deploy to EC2
+        uses: easingthemes/ssh-deploy@main
+        with:
+          ssh-private-key: ${{ secrets.EC2_SSH_KEY }}
+          remote-user: ubuntu
+          server-ip: ${{ secrets.EC2_HOST }}
+          remote-path: /home/ubuntu/app
+          local-path: .

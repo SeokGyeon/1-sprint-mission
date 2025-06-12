@@ -1,9 +1,9 @@
-import http from 'http';
+import express from 'express';
+import cors from 'cors';
+import path from 'path';
+import cookieParser from 'cookie-parser';
 
-import { PORT, PUBLIC_PATH, STATIC_PATH } from './lib/constants';
-import { initializeSocketServer } from './socket/socketService';
-import { setSocketIO } from './socket/socketInstance';
-
+import { PUBLIC_PATH, STATIC_PATH } from './lib/constants';
 import articlesRouter from './routers/articlesRouter';
 import productsRouter from './routers/productsRouter';
 import commentsRouter from './routers/commentsRouter';
@@ -31,10 +31,4 @@ app.use('/', notificationsRouter);
 app.use(defaultNotFoundHandler);
 app.use(globalErrorHandler);
 
-const server = http.createServer(app);
-const io = initializeSocketServer(server);
-setSocketIO(io);
-
-server.listen(Number(PORT), '0.0.0.0', () => {
-  console.log(`Server started on port ${PORT}`);
-});
+export default app;
