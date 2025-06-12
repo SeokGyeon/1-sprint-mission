@@ -15,7 +15,7 @@ jobs:
         uses: easingthemes/ssh-deploy@main
         with:
           ssh-private-key: ${{ secrets.EC2_SSH_KEY }}
-          remote-user: ubuntu
+          remote-user: ec2-user
           server-ip: ${{ secrets.EC2_HOST }}
-          remote-path: /home/ubuntu/app
+          remote-path: /home/ec2-user/app
           local-path: .
