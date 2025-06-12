@@ -35,10 +35,10 @@ app.use('/', notificationsRouter);
 app.use(defaultNotFoundHandler);
 app.use(globalErrorHandler);
 
-
 const server = http.createServer(app);
 const io = initializeSocketServer(server);
 setSocketIO(io);
+export default app;
 
 server.listen(Number(PORT), '0.0.0.0', () => {
   console.log(`Server started on port ${PORT}`);
