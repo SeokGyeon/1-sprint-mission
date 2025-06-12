@@ -31,6 +31,7 @@ app.use('/', notificationsRouter);
 app.use(defaultNotFoundHandler);
 app.use(globalErrorHandler);
 
+
 const server = http.createServer(app);
 const io = initializeSocketServer(server);
 setSocketIO(io);
